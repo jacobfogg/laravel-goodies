@@ -4,7 +4,7 @@ use Tappleby\AuthToken\Exceptions\NotAuthorizedException;
 use Tappleby\AuthToken\AuthTokenController as ATC;
 use Input;
 use Validator;
-use Denaje\ApiController;
+use ApiController;
 
 class AuthTokenController extends ATC
 {
