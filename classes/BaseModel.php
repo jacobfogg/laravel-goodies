@@ -1,4 +1,4 @@
-<?php namespace Denaje;
+<?php
 
 class BaseModel extends Eloquent
 {

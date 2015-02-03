@@ -1,4 +1,4 @@
-<?php namespace Denaje;
+<?php
 
 use Denaje\Traits\CasingTrait;
 use Illuminate\Support\Contracts\JsonableInterface;

@@ -1,4 +1,4 @@
-<?php namespace Denaje;
+<?php
 
 use Carbon\Carbon;
 
