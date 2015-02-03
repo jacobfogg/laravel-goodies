@@ -20,7 +20,7 @@
             "classes"
         ],
         "psr-4": {
-            "Denaje": "src"
+            "Denaje\\": "src"
         }
     }
 }
