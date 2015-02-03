@@ -1,0 +1,26 @@
+{
+    "name": "denaje/laravel-goodies",
+    "description": "Helper classes to make REST frameworks easier.",
+    "authors": [
+        {
+            "name": "Jesse Denardo",
+            "email": "denaje@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "laravel/framework": "4.2.*",
+        "tappleby/laravel-auth-token": "0.3.*"
+    },
+    "require-dev": {
+        "brianium/paratest": "0.9.6"
+    },
+    "autoload": {
+        "classmap": [
+            "classes"
+        ],
+        "psr-4": {
+            "Denaje": "src"
+        }
+    }
+}
