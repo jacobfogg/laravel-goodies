@@ -7,7 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
-class ApiController extends Controller
+class ApiController extends BaseController
 {
     use CasingTrait;
     use DispatchesCommands;
