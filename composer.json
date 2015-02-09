@@ -7,10 +7,16 @@
             "email": "denaje@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/denaje/laravel-auth-token"
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
-        "laravel/framework": "4.2.*",
-        "tappleby/laravel-auth-token": "0.3.*"
+        "laravel/framework": "5.0.*",
+        "denaje/laravel-auth-token": "dev-master"
     },
     "require-dev": {
         "brianium/paratest": "0.9.6"
