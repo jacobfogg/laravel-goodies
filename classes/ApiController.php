@@ -1,12 +1,17 @@
 <?php
 
 use Denaje\Traits\CasingTrait;
-use Illuminate\Support\Contracts\JsonableInterface;
-use Illuminate\Support\Contracts\ArrayableInterface;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ApiController extends Controller
 {
     use CasingTrait;
+    use DispatchesCommands;
+    use ValidatesRequests;
 
     public static function getJson()
     {
@@ -48,9 +53,9 @@ class ApiController extends Controller
         }
 
         // Convert the thing in question to an array
-        if ($object instanceof ArrayableInterface) {
+        if ($object instanceof Arrayable) {
             $array = $object->toArray();
-        } elseif ($object instanceof JsonableInterface) {
+        } elseif ($object instanceof Jsonable) {
             $array = json_decode($object->toJson(), true);
         } elseif (is_object($object)) {
             $array = (array) $object;
