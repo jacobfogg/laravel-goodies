@@ -41,9 +41,13 @@ class ApiController extends BaseController
         return static::respond(404, $object);
     }
 
-    public static function respondUnprocessable()
+    public static function respondUnprocessable($message = null)
     {
-        return static::respond(422);
+        if (is_null($message)) {
+            return static::respond(422);
+        }
+
+        return static::respond(422, ['message' => $message]);
     }
 
     public static function respond($statusCode, $object = null)
