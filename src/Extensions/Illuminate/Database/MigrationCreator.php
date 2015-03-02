@@ -1,4 +1,4 @@
-<?php namespace Denaje\Extensions\Database;
+<?php namespace Denaje\Extensions\Illuminate\Database;
 
 use Illuminate\Database\Migrations\MigrationCreator as MC;
 

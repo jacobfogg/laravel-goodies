@@ -5,7 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class {{class}} extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,10 +13,7 @@ class {{class}} extends Migration
     public function up()
     {
         DB::transaction(function () {
-            Schema::create('{{table}}', function (Blueprint $table) {
-                $table->increments('id');
-                $table->timestamps();
-            });
+            //
         });
     }
 
@@ -29,8 +25,7 @@ class {{class}} extends Migration
     public function down()
     {
         DB::transaction(function () {
-            Schema::drop('{{table}}');
+            //
         });
     }
-
 }

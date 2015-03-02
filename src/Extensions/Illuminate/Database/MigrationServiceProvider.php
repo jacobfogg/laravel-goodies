@@ -1,6 +1,6 @@
-<?php namespace Denaje\Extensions\Database;
+<?php namespace Denaje\Extensions\Illuminate\Database;
 
-use Denaje\Extensions\Database\MigrationCreator;
+use Denaje\Extensions\Illuminate\Database\MigrationCreator;
 use Illuminate\Database\MigrationServiceProvider as MSP;
 
 class MigrationServiceProvider extends MSP

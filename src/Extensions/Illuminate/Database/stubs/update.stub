@@ -5,7 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class {{class}} extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,7 +13,9 @@ class {{class}} extends Migration
     public function up()
     {
         DB::transaction(function () {
-            //
+            Schema::table('{{table}}', function (Blueprint $table) {
+                //
+            });
         });
     }
 
@@ -26,7 +27,9 @@ class {{class}} extends Migration
     public function down()
     {
         DB::transaction(function () {
-            //
+            Schema::table('{{table}}', function (Blueprint $table) {
+                //
+            });
         });
     }
 }

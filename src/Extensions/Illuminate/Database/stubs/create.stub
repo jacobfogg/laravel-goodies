@@ -14,8 +14,9 @@ class {{class}} extends Migration
     public function up()
     {
         DB::transaction(function () {
-            Schema::table('{{table}}', function (Blueprint $table) {
-                //
+            Schema::create('{{table}}', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
             });
         });
     }
@@ -28,10 +29,7 @@ class {{class}} extends Migration
     public function down()
     {
         DB::transaction(function () {
-            Schema::table('{{table}}', function (Blueprint $table) {
-                //
-            });
-        }
+            Schema::drop('{{table}}');
+        });
     }
-
 }
