@@ -1,10 +1,13 @@
 {
     "name": "denaje/laravel-goodies",
-    "description": "Helper classes to make REST frameworks easier.",
+    "description": "Helper classes and extensions to make REST frameworks easier in Laravel.",
+    "keywords": ["laravel", "rest", "psr-4"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Jesse Denardo",
-            "email": "denaje@gmail.com"
+            "email": "denaje@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
