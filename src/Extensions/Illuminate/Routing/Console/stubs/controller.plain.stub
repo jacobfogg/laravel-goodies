@@ -1,0 +1,10 @@
+<?php namespace {{namespace}};
+
+use {{rootNamespace}}Http\Requests;
+
+use Illuminate\Http\Request;
+
+class {{class}} extends ApiController
+{
+    //
+}
