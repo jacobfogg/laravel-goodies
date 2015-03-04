@@ -1,7 +1,7 @@
 {
     "name": "denaje/laravel-goodies",
     "description": "Helper classes and extensions to make REST frameworks easier in Laravel.",
-    "keywords": ["laravel", "rest", "psr-4"],
+    "keywords": ["laravel", "rest", "psr-2"],
     "license": "MIT",
     "authors": [
         {
@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "laravel/framework": "5.0.*"
+        "laravel/framework": "5.0.*",
+        "tymon/jwt-auth": "0.5.0"
     },
     "require-dev": {
         "brianium/paratest": "0.9.6"

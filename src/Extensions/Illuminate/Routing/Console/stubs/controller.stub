@@ -1,5 +1,8 @@
 <?php namespace {{namespace}};
 
+use ApiController;
+use Auth;
+
 class {{class}} extends ApiController
 {
     /**
