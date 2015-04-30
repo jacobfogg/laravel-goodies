@@ -1,10 +1,12 @@
 <?php
 
 use Carbon\Carbon;
+use App\User;
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     protected $now;
+    private $token;
 
     public function __construct()
     {
@@ -18,11 +20,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
      */
     public function createApplication()
     {
-        $unitTesting = true;
+        $app = require __DIR__.'/../bootstrap/app.php';
 
-        $testEnvironment = 'testing';
+        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
-        return require __DIR__.'/../../bootstrap/start.php';
+        return $app;
     }
 
     public function setUp()
@@ -43,13 +45,13 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
                 break;
         }
 
-        DB::beginTransaction();
+        #DB::beginTransaction();
     }
 
     public function tearDown()
     {
         parent::tearDown();
-        DB::rollBack();
+        #DB::rollBack();
     }
 
     protected function callRoute($method, $route, $data = [], $headers = [])
@@ -58,9 +60,14 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
             throw new Exception("Hey dummy, you wrote your test wrong! $route should be /$route");
         }
 
+        if ($this->token && !isset($headers['Authorization'])) {
+            $headers['HTTP_Authorization'] = "Bearer: $this->token";
+        }
+
         return $this->call(
             $method,
             "/api$route",
+            [],
             [],
             [],
             $headers,
@@ -83,14 +90,19 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         $this->assertEquals(204, $response->getStatusCode());
     }
 
-    protected function expectUnauthorized()
+    protected function assert400($response)
     {
-        $this->setExpectedException('AuthTokenNotAuthorizedException');
+        $this->assertEquals(400, $response->getStatusCode());
+    }
+
+    protected function assertUnauthorized($response)
+    {
+        $this->assertEquals(401, $response->getStatusCode());
     }
 
     protected function expectNotFound()
     {
-        $this->setExpectedException('ModelNotFoundException');
+        $this->setExpectedException('Symfony\Component\HttpKernel\Exception\NotFoundHttpException');
     }
 
     protected function assertUnprocessableEntity($response)
@@ -117,6 +129,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     protected function login($user_id = 1)
     {
-        $this->be(User::find($user_id));
+        $user = User::find($user_id);
+        $this->token = JWTAuth::fromUser($user);
+
+        JWTAuth::setToken($this->token);
+
+        Auth::login($user);
     }
 }
