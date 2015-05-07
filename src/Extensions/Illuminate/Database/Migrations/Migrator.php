@@ -1,12 +1,12 @@
-<?php namespace Extensions\Illuminate\Database\Migrations;
+<?php namespace Denaje\Extensions\Illuminate\Database\Migrations;
 
-use Illuminate\Database\Migrations\Migrator;
+use Illuminate\Database\Migrations\Migrator as M;
 
 class Migrator extends M
 {
     protected function runUp($file, $batch, $pretend)
     {
-        $this->note("<info>Migrating:</info> $file");
+        echo "\033[32mMigrating:\033[m $file\n";
 
         parent::runUp($file, $batch, $pretend);
     }
@@ -15,7 +15,7 @@ class Migrator extends M
     {
         $file = $migration->migration;
 
-        $this->note("<info>Rolling back:</info> $file");
+        echo "\033[32mRolling back:\033[m $file\n";
 
         parent::runDown($migration, $pretend);
     }
