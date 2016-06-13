@@ -18,13 +18,11 @@ class ConsoleSupportServiceProvider extends AggregateServiceProvider
      */
     protected $providers = [
         'Denaje\Extensions\Illuminate\Database\MigrationServiceProvider',
-        'Denaje\Extensions\Illuminate\Routing\GeneratorServiceProvider',
+        'Denaje\Extensions\Illuminate\Foundation\Providers\ArtisanServiceProvider',
 
-        'Illuminate\Auth\GeneratorServiceProvider',
         'Illuminate\Console\ScheduleServiceProvider',
         'Illuminate\Database\SeedServiceProvider',
         'Illuminate\Foundation\Providers\ComposerServiceProvider',
         'Illuminate\Queue\ConsoleServiceProvider',
-        'Illuminate\Session\CommandsServiceProvider',
     ];
 }

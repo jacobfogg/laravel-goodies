@@ -3,15 +3,16 @@
 use Denaje\Traits\CasingTrait;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Foundation\Bus\DispatchesCommands;
+
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class ApiController extends BaseController
 {
-    use CasingTrait;
-    use DispatchesCommands;
-    use ValidatesRequests;
+    use CasingTrait, AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
     public static function getJson()
     {

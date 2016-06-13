@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class {{class}} extends Migration
+class DummyClass extends Migration
 {
 
     /**
@@ -14,7 +14,7 @@ class {{class}} extends Migration
     public function up()
     {
         DB::transaction(function () {
-            Schema::create('{{table}}', function (Blueprint $table) {
+            Schema::create('DummyTable', function (Blueprint $table) {
                 $table->increments('id');
                 $table->timestamps();
             });
@@ -29,7 +29,7 @@ class {{class}} extends Migration
     public function down()
     {
         DB::transaction(function () {
-            Schema::drop('{{table}}');
+            Schema::drop('DummyTable');
         });
     }
 }

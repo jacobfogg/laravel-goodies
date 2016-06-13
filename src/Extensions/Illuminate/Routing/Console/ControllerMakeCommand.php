@@ -11,10 +11,10 @@ class ControllerMakeCommand extends CMC
      */
     protected function getStub()
     {
-        if ($this->option('plain')) {
-            return __DIR__.'/stubs/controller.plain.stub';
+        if ($this->option('resource')) {
+            return __DIR__.'/stubs/controller.stub';
         }
 
-        return __DIR__.'/stubs/controller.stub';
+        return __DIR__.'/stubs/controller.plain.stub';
     }
 }

@@ -1,8 +1,13 @@
-<?php namespace {{namespace}};
+<?php namespace DummyNamespace;
+
+use Illuminate\Http\Request;
+
+use DummyRootNamespaceHttp\Requests;
+use DummyRootNamespaceHttp\Controllers\Controller;
 
 use ApiController;
 
-class {{class}} extends ApiController
+class DummyClass extends ApiController
 {
     //
 }
