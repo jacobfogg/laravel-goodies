@@ -16,7 +16,7 @@ class ApiController extends BaseController
 
     public static function getJson()
     {
-        $input = Input::json()->all();
+        $input = json_decode(json_encode(request()->json()->all()));
 
         // Switch the case
         return static::convertKeysToCase($input, 'snake_case');
