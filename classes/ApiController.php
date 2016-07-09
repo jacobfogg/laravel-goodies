@@ -19,7 +19,7 @@ class ApiController extends BaseController
         $input = json_decode(json_encode(request()->json()->all()));
 
         // Switch the case
-        return static::convertKeysToCase($input, 'snake_case');
+        // return static::convertKeysToCase($input, 'snake_case');
     }
 
     public static function respondOk($object)
@@ -71,7 +71,7 @@ class ApiController extends BaseController
         }
 
         // Switch the case
-        $data = static::convertKeysToCase($array, 'camel_case');
+        // $data = static::convertKeysToCase($array, 'camel_case');
 
         // Return the response
         return Response::json($data, $statusCode);
