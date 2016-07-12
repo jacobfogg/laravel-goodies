@@ -74,7 +74,7 @@ class ApiController extends BaseController
         // $data = static::convertKeysToCase($array, 'camel_case');
 
         // Return the response
-        return Response::json($data, $statusCode);
+        return Response::json($array, $statusCode);
     }
 
     public function __call($method, $args)
